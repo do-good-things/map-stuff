@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Point Reyes 2025</title>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+  <div id="sidebar">
+    <div id="sidebar-header">
+      <a href="/" class="back-link">← Events</a>
+      <div id="event-title">Point Reyes</div>
+      <div id="event-subtitle">2025 · Coastal Rides · 3 Days</div>
+      <a href="/point_reyes_simulate" class="sim-launch-btn">▶ Run Simulation</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="section-label">RIDERS <a href="#" id="toggle-all-riders" class="toggle-all-link">unselect all</a></div>
+      <div id="rider-list">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="section-label">RIDES <a href="#" id="toggle-all-rides" class="toggle-all-link">unselect all</a></div>
+      <div id="ride-list">
+        <label class="check-row">
+          <span class="check-label">Day 1</span>
+          <input type="checkbox" class="check-input" data-ride="0" checked />
+        </label>
+        <label class="check-row">
+          <span class="check-label">Day 2</span>
+          <input type="checkbox" class="check-input" data-ride="1" checked />
+        </label>
+        <label class="check-row">
+          <span class="check-label">Day 3</span>
+          <input type="checkbox" class="check-input" data-ride="2" checked />
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <script src="/point_reyes_app.js"></script>
+</body>
+</html>
