@@ -8,7 +8,7 @@ from flask import Flask, jsonify, send_from_directory
 app = Flask(__name__, static_folder='.')
 
 BASE_DIR = Path(__file__).parent
-POINT_REYES_DIR = BASE_DIR / 'point_reyes'
+POINT_REYES_DIR = BASE_DIR / 'point-reyes'
 
 POINT_REYES_COLORS = {
     'sarah': '#FF6B6B',
