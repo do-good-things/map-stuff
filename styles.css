@@ -1,6 +1,6 @@
 /* -------------------------------------------------------
   Ride Visualizer
-  Dark theme optimized for map-heavy layout
+  Light theme inspired by ridesometime.com
 ------------------------------------------------------- */
 
 * {
@@ -11,9 +11,9 @@
 
 html, body {
   height: 100%;
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  background: #0d1117;
-  color: #e6edf3;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #ffffff;
+  color: #333333;
 }
 
 /* ── Layout ── */
@@ -27,8 +27,9 @@ body {
   width: 280px;
   min-width: 280px;
   height: 100vh;
-  background: #161b22;
-  border-right: 1px solid #30363d;
+  background: #ffffff;
+  border-right: none;
+  box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -44,38 +45,38 @@ body {
 /* ── Sidebar Header ── */
 #sidebar-header {
   padding: 20px 18px 16px;
-  background: #0d1117;
-  border-bottom: 1px solid #30363d;
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
 }
 
 #event-title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
-  letter-spacing: 1px;
-  color: #f0f6fc;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #333333;
+  text-transform: lowercase;
 }
 
 #event-subtitle {
   font-size: 11px;
-  color: #8b949e;
+  color: #999999;
   margin-top: 3px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
 }
 
 /* ── Sidebar Sections ── */
 .sidebar-section {
   padding: 14px 18px;
-  border-bottom: 1px solid #21262d;
+  border-bottom: 1px solid #eee;
 }
 
 .section-label {
   font-size: 10px;
   font-weight: 600;
-  color: #8b949e;
+  color: #999999;
   letter-spacing: 1.2px;
-  text-transform: uppercase;
+  text-transform: lowercase;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
@@ -85,7 +86,7 @@ body {
 .toggle-all-link {
   font-size: 10px;
   font-weight: 400;
-  color: #58a6ff;
+  color: #fc4c02;
   text-decoration: none;
   text-transform: none;
   letter-spacing: 0;
@@ -103,7 +104,7 @@ body {
   gap: 8px;
   margin-bottom: 8px;
   font-size: 13px;
-  color: #c9d1d9;
+  color: #333333;
   cursor: pointer;
   padding: 4px 6px;
   border-radius: 6px;
@@ -111,7 +112,7 @@ body {
 }
 
 .check-row:hover {
-  background: #21262d;
+  background: #f0f0f0;
 }
 
 .check-input {
@@ -119,7 +120,7 @@ body {
   -webkit-appearance: none;
   width: 16px;
   height: 16px;
-  border: 2px solid #30363d;
+  border: 2px solid #ddd;
   border-radius: 3px;
   cursor: pointer;
   flex-shrink: 0;
@@ -129,8 +130,8 @@ body {
 }
 
 .check-input:checked {
-  background: #238636;
-  border-color: #238636;
+  background: #fc4c02;
+  border-color: #fc4c02;
 }
 
 .check-input:checked::after {
@@ -156,7 +157,7 @@ body {
 .rider-label,
 .check-label {
   font-size: 13px;
-  color: #e6edf3;
+  color: #333333;
   flex: 1;
   text-transform: capitalize;
 }
@@ -164,7 +165,7 @@ body {
 /* ── Animation controls ── */
 #anim-day-label {
   font-size: 12px;
-  color: #8b949e;
+  color: #999999;
   margin-bottom: 10px;
   min-height: 16px;
 }
@@ -178,18 +179,18 @@ body {
 #anim-buttons button {
   flex: 1;
   padding: 7px 4px;
-  border: 1px solid #30363d;
+  border: 1px solid #ddd;
   border-radius: 6px;
-  background: #21262d;
-  color: #e6edf3;
+  background: #f7f7f7;
+  color: #333333;
   font-size: 11px;
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s;
 }
 
 #anim-buttons button:hover:not(:disabled) {
-  background: #30363d;
-  border-color: #58a6ff;
+  background: #eee;
+  border-color: #fc4c02;
 }
 
 #anim-buttons button:disabled {
@@ -198,15 +199,15 @@ body {
 }
 
 #btn-play {
-  color: #3fb950 !important;
+  color: #fc4c02 !important;
 }
 
 #btn-pause {
-  color: #f0f6fc !important;
+  color: #333333 !important;
 }
 
 #btn-reset {
-  color: #8b949e !important;
+  color: #999999 !important;
 }
 
 #anim-speed-row {
@@ -217,14 +218,14 @@ body {
 
 .speed-label {
   font-size: 11px;
-  color: #8b949e;
+  color: #999999;
 }
 
 #anim-speed {
   flex: 1;
-  background: #21262d;
-  border: 1px solid #30363d;
-  color: #e6edf3;
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  color: #333333;
   font-size: 11px;
   padding: 4px 6px;
   border-radius: 4px;
@@ -241,25 +242,25 @@ body {
 #ride-jump-buttons button {
   flex: 1;
   padding: 5px 4px;
-  border: 1px solid #30363d;
+  border: 1px solid #ddd;
   border-radius: 6px;
-  background: #21262d;
-  color: #8b949e;
+  background: #f7f7f7;
+  color: #999999;
   font-size: 10px;
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
 
 #ride-jump-buttons button:hover {
-  background: #30363d;
-  border-color: #58a6ff;
-  color: #e6edf3;
+  background: #eee;
+  border-color: #fc4c02;
+  color: #333333;
 }
 
 #ride-jump-buttons button.active-ride {
-  border-color: #58a6ff;
-  color: #58a6ff;
-  background: #161b22;
+  border-color: #fc4c02;
+  color: #fc4c02;
+  background: #fff;
 }
 
 /* ── Stats ── */
@@ -279,7 +280,7 @@ body {
   gap: 6px;
   font-size: 12px;
   font-weight: 600;
-  color: #e6edf3;
+  color: #333333;
   text-transform: capitalize;
   margin-bottom: 3px;
 }
@@ -293,26 +294,27 @@ body {
 
 .stat-row {
   font-size: 11px;
-  color: #8b949e;
+  color: #999999;
   padding-left: 14px;
   line-height: 1.6;
 }
 
 .stat-value {
-  color: #c9d1d9;
+  color: #333333;
   font-weight: 500;
 }
 
 /* ── Leaflet overrides ── */
 .leaflet-container {
-  background: #0d1117;
+  background: #f7f7f7;
 }
 
 .leaflet-control-layers {
-  background: #161b22 !important;
-  border: 1px solid #30363d !important;
-  color: #e6edf3 !important;
-  border-radius: 8px !important;
+  background: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1) !important;
+  color: #333333 !important;
+  border-radius: 4px !important;
 }
 
 .leaflet-control-layers-expanded {
@@ -320,35 +322,38 @@ body {
 }
 
 .leaflet-control-layers label {
-  color: #c9d1d9 !important;
+  color: #333333 !important;
   font-size: 12px !important;
 }
 
 .leaflet-control-zoom a {
-  background: #161b22 !important;
-  border: 1px solid #30363d !important;
-  color: #e6edf3 !important;
+  background: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1) !important;
+  color: #333333 !important;
 }
 
 .leaflet-control-zoom a:hover {
-  background: #21262d !important;
+  background: #f0f0f0 !important;
 }
 
 .leaflet-popup-content-wrapper {
-  background: #161b22 !important;
-  border: 1px solid #30363d !important;
-  color: #e6edf3 !important;
-  border-radius: 8px !important;
+  background: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1) !important;
+  color: #333333 !important;
+  border-radius: 4px !important;
 }
 
 .leaflet-popup-tip {
-  background: #30363d !important;
+  background: #ffffff !important;
 }
 
 .leaflet-tooltip {
-  background: #161b22 !important;
-  border: 1px solid #30363d !important;
-  color: #e6edf3 !important;
+  background: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1) !important;
+  color: #333333 !important;
   font-size: 12px !important;
   border-radius: 4px !important;
 }
@@ -363,7 +368,7 @@ body {
 
 #anim-time-display {
   font-size: 12px;
-  color: #8b949e;
+  color: #999999;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.3px;
   margin-bottom: 4px;
@@ -379,7 +384,7 @@ body {
   appearance: none;
   height: 4px;
   border-radius: 2px;
-  background: #30363d;
+  background: #ddd;
   outline: none;
   cursor: pointer;
 }
@@ -390,18 +395,18 @@ body {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #58a6ff;
+  background: #fc4c02;
   cursor: pointer;
-  border: 2px solid #0d1117;
+  border: 2px solid #ffffff;
 }
 
 #anim-scrubber::-moz-range-thumb {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #58a6ff;
+  background: #fc4c02;
   cursor: pointer;
-  border: 2px solid #0d1117;
+  border: 2px solid #ffffff;
 }
 
 /* ── Simulation launch button ── */
@@ -409,23 +414,23 @@ body {
   display: inline-block;
   margin-top: 10px;
   padding: 6px 14px;
-  background: #21262d;
-  border: 1px solid #30363d;
+  background: #f7f7f7;
+  border: 1px solid #ddd;
   border-radius: 6px;
-  color: #3fb950;
+  color: #fc4c02;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.5px;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: lowercase;
   transition: background 0.15s, border-color 0.15s, color 0.15s;
   cursor: pointer;
 }
 
 .sim-launch-btn:hover {
-  background: #2d333b;
-  border-color: #3fb950;
-  color: #56d364;
+  background: #eee;
+  border-color: #fc4c02;
+  color: #e04000;
 }
 
 /* ── Scrubber (simulation page) ── */
@@ -435,7 +440,7 @@ body {
   appearance: none;
   height: 4px;
   border-radius: 2px;
-  background: #30363d;
+  background: #ddd;
   outline: none;
   cursor: pointer;
 }
@@ -446,25 +451,25 @@ body {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #58a6ff;
+  background: #fc4c02;
   cursor: pointer;
-  border: 2px solid #0d1117;
+  border: 2px solid #ffffff;
 }
 
 #sim-scrubber::-moz-range-thumb {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #58a6ff;
+  background: #fc4c02;
   cursor: pointer;
-  border: 2px solid #0d1117;
+  border: 2px solid #ffffff;
 }
 
 /* ── Back link ── */
 .back-link {
   display: inline-block;
   font-size: 11px;
-  color: #8b949e;
+  color: #999999;
   text-decoration: none;
   letter-spacing: 0.5px;
   margin-bottom: 10px;
@@ -472,7 +477,7 @@ body {
 }
 
 .back-link:hover {
-  color: #58a6ff;
+  color: #fc4c02;
 }
 
 /* ── Landing Page ── */
@@ -483,7 +488,7 @@ body.landing-body {
   flex-direction: column;
   min-height: 100vh;
   overflow: auto;
-  background: #0d1117;
+  background: #ffffff;
 }
 
 .landing-container {
@@ -501,18 +506,18 @@ body.landing-body {
 }
 
 .landing-title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #f0f6fc;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+  color: #333333;
 }
 
 .landing-subtitle {
   font-size: 13px;
-  color: #8b949e;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  color: #999999;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
   margin-top: 8px;
 }
 
@@ -528,21 +533,22 @@ body.landing-body {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  background: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 12px;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
   padding: 28px 32px;
   text-decoration: none;
   color: inherit;
   width: 280px;
-  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+  transition: background 0.15s, box-shadow 0.15s, transform 0.15s;
   cursor: pointer;
   position: relative;
 }
 
 .event-card:hover {
-  background: #21262d;
-  border-color: #58a6ff;
+  background: #f0f0f0;
+  box-shadow: 0 0 0 2px rgba(252, 76, 2, 0.4);
   transform: translateY(-2px);
 }
 
@@ -554,20 +560,20 @@ body.landing-body {
 .event-card-title {
   font-size: 20px;
   font-weight: 700;
-  color: #f0f6fc;
-  letter-spacing: 0.5px;
+  color: #333333;
+  letter-spacing: 0.02em;
 }
 
 .event-card-sub {
   font-size: 12px;
-  color: #8b949e;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+  color: #999999;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
 }
 
 .event-card-meta {
   font-size: 12px;
-  color: #c9d1d9;
+  color: #777777;
   margin-top: 4px;
 }
 
@@ -576,12 +582,12 @@ body.landing-body {
   top: 28px;
   right: 24px;
   font-size: 18px;
-  color: #30363d;
+  color: #ddd;
   transition: color 0.15s, transform 0.15s;
 }
 
 .event-card:hover .event-card-arrow {
-  color: #58a6ff;
+  color: #fc4c02;
   transform: translateX(3px);
 }
 
@@ -597,7 +603,8 @@ body.landing-body {
     height: auto;
     max-height: 45vh;
     border-right: none;
-    border-bottom: 1px solid #30363d;
+    box-shadow: none;
+    border-bottom: 1px solid #eee;
   }
 
   #map {
